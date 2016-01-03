@@ -1,9 +1,4 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
-}
-
-/* Set padding to keep content from hitting the edges */
+﻿/* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
@@ -21,4 +16,24 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+
+
+
+@media (min-width: 768px) {
+    .navbar .navbar-nav {
+        display: inline-block;
+        float: none;
+        vertical-align: top;
+    }
+
+    .navbar .navbar-collapse {
+        text-align: center;
+    }
+}
+
+.navbar {
+    border-bottom: 2px solid #e6e6e6;
+    border-radius: 0;
 }
