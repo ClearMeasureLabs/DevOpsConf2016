@@ -3,7 +3,7 @@ namespace DevOpsConf2016.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Initial : DbMigration
+    public partial class initial : DbMigration
     {
         public override void Up()
         {
@@ -23,43 +23,41 @@ namespace DevOpsConf2016.Migrations
                 "dbo.Speakers",
                 c => new
                     {
-                        AttendeeId = c.Guid(nullable: false),
+                        Id = c.Guid(nullable: false),
                         TwitterHandle = c.String(maxLength: 35),
                         Company = c.String(maxLength: 50),
                         CompanyURL = c.String(nullable: false, maxLength: 150),
                         BlogURL = c.String(nullable: false, maxLength: 150),
                     })
-                .PrimaryKey(t => t.AttendeeId)
-                .ForeignKey("dbo.Attendees", t => t.AttendeeId)
-                .Index(t => t.AttendeeId);
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Attendees", t => t.Id)
+                .Index(t => t.Id);
             
             CreateTable(
                 "dbo.Sessions",
                 c => new
                     {
                         ID = c.Int(nullable: false, identity: true),
-                        AttendeeId = c.Guid(nullable: false),
                         Title = c.String(nullable: false),
                         Abstract = c.String(nullable: false),
                         Objectives = c.String(),
                         Level = c.Int(nullable: false),
                         Requirements = c.String(),
                         Accepted = c.Boolean(nullable: false),
+                        Speaker_Id = c.Guid(),
                     })
                 .PrimaryKey(t => t.ID)
-                .ForeignKey("dbo.Speakers", t => t.AttendeeId)
-                .Index(t => t.AttendeeId);
+                .ForeignKey("dbo.Speakers", t => t.Speaker_Id)
+                .Index(t => t.Speaker_Id);
             
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.Speakers", "AttendeeId", "dbo.Attendees");
-            DropForeignKey("dbo.Sessions", "Speaker_AttendeeId", "dbo.Speakers");
-            DropForeignKey("dbo.Sessions", "SpeakerInfo_AttendeeId", "dbo.Speakers");
-            DropIndex("dbo.Sessions", new[] { "Speaker_AttendeeId" });
-            DropIndex("dbo.Sessions", new[] { "SpeakerInfo_AttendeeId" });
-            DropIndex("dbo.Speakers", new[] { "AttendeeId" });
+            DropForeignKey("dbo.Speakers", "Id", "dbo.Attendees");
+            DropForeignKey("dbo.Sessions", "Speaker_Id", "dbo.Speakers");
+            DropIndex("dbo.Sessions", new[] { "Speaker_Id" });
+            DropIndex("dbo.Speakers", new[] { "Id" });
             DropTable("dbo.Sessions");
             DropTable("dbo.Speakers");
             DropTable("dbo.Attendees");

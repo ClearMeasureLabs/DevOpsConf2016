@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
@@ -21,15 +22,12 @@ namespace DevOpsConf2016.Contexts
                 .WithRequired();
 
             modelBuilder.Entity<Speaker>()
-                .HasKey(e => e.AttendeeId)
+                .HasKey(e => e.Id)
                 .HasMany(e => e.Sessions)
                 .WithOptional();
-            modelBuilder.Entity<Attendee>()
-                .HasKey(e => e.Id);
             modelBuilder.Entity<SessionInfo>()
-                .HasRequired(e => e.SpeakerInfo)
-                .WithOptional()
-                .WillCascadeOnDelete(true);
+                .Property(e => e.ID)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
 
         }

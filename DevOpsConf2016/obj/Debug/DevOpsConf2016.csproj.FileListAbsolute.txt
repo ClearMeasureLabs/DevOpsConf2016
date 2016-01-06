@@ -106,11 +106,13 @@ C:\Users\Gus\Source\Repos\CM\2013\DevOpsConf2016\DevOpsConf2016\bin\System.Web.R
 C:\Users\Gus\Source\Repos\CM\2013\DevOpsConf2016\DevOpsConf2016\bin\System.Web.WebPages.xml
 C:\Users\Gus\Source\Repos\CM\2013\DevOpsConf2016\DevOpsConf2016\bin\System.Web.WebPages.Deployment.xml
 C:\Users\Gus\Source\Repos\CM\2013\DevOpsConf2016\DevOpsConf2016\bin\System.Web.WebPages.Razor.xml
-C:\Users\Gus\Source\Repos\CM\2013\DevOpsConf2016\DevOpsConf2016\obj\Debug\DevOpsConf2016.Migrations.Initial.resources
-C:\Users\Gus\Source\Repos\CM\2013\DevOpsConf2016\DevOpsConf2016\obj\Debug\DevOpsConf2016.csproj.GenerateResource.Cache
 C:\Users\Gus\Source\Repos\CM\2013\DevOpsConf2016\DevOpsConf2016\bin\Antlr3.Runtime.dll
 C:\Users\Gus\Source\Repos\CM\2013\DevOpsConf2016\DevOpsConf2016\bin\EntityFramework.dll
 C:\Users\Gus\Source\Repos\CM\2013\DevOpsConf2016\DevOpsConf2016\bin\EntityFramework.SqlServer.dll
 C:\Users\Gus\Source\Repos\CM\2013\DevOpsConf2016\DevOpsConf2016\bin\Antlr3.Runtime.pdb
 C:\Users\Gus\Source\Repos\CM\2013\DevOpsConf2016\DevOpsConf2016\bin\EntityFramework.xml
 C:\Users\Gus\Source\Repos\CM\2013\DevOpsConf2016\DevOpsConf2016\bin\EntityFramework.SqlServer.xml
+C:\Users\Gus\Source\Repos\CM\2013\DevOpsConf2016\DevOpsConf2016\bin\AutoMapper.dll
+C:\Users\Gus\Source\Repos\CM\2013\DevOpsConf2016\DevOpsConf2016\bin\AutoMapper.xml
+C:\Users\Gus\Source\Repos\CM\2013\DevOpsConf2016\DevOpsConf2016\obj\Debug\DevOpsConf2016.Migrations.initial.resources
+C:\Users\Gus\Source\Repos\CM\2013\DevOpsConf2016\DevOpsConf2016\obj\Debug\DevOpsConf2016.csproj.GenerateResource.Cache

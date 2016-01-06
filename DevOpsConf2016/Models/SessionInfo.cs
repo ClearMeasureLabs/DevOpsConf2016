@@ -13,18 +13,23 @@ namespace DevOpsConf2016.Models
     {
         [Key]
         public int ID { get; set; }
-        public Guid AttendeeId { get; set; }
+
         [Required]
         public string Title { get; set; }
+
         [Required]
         public string Abstract { get; set; }
+
         public string Objectives { get; set; }
+
         [Required]
         public TalkLevel Level { get; set; }
+
         public string Requirements { get; set; }
+
         [DefaultValue(false)]
         public bool Accepted { get; set; }
+
         
-        public virtual Speaker SpeakerInfo { get; set; } 
     }
 }

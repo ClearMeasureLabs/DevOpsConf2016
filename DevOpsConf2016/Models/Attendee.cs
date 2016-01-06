@@ -1,10 +1,16 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DevOpsConf2016.Models
 {
     public class Attendee
     {
+        public Attendee ()
+        {
+            SpeakerInfo = new Speaker();
+        }
+
         [Key]
         [Required]
         public Guid Id { get; set; }
@@ -23,9 +29,7 @@ namespace DevOpsConf2016.Models
 
         [Required]
         [MaxLength(100)]
-        [EmailAddress()]
         public string EMail { get; set; }
-
 
         public virtual Speaker SpeakerInfo { get; set; }
 

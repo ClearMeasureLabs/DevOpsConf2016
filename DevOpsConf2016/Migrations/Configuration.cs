@@ -1,5 +1,3 @@
-using DevOpsConf2016.Models;
-
 namespace DevOpsConf2016.Migrations
 {
     using System;
@@ -28,20 +26,7 @@ namespace DevOpsConf2016.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
-            var id = Guid.NewGuid();
-
-            context.Attendees.AddOrUpdate(
-                p => p.Id,
-                new Attendee() { EMail = "who@where.com", FirstName = "Who", LastName = "Villian", Id = id, Title = "Sr. Whovener" }
-                );
-            context.Speakers.AddOrUpdate(
-                p => p.AttendeeId,
-                new Speaker() { AttendeeId = id, BlogURL = "http://who.com", Company = "WhoACME", CompanyURL = "http://who.com", TwitterHandle = "@whovian" }
-                );
-            context.Sessions.AddOrUpdate(
-                p => p.ID,
-                new SessionInfo() { AttendeeId = id, Abstract = "This is the abstract", Accepted = false, Level = TalkLevel.Advanced, Objectives = "Objectives", Requirements = "", Title = "" }
-                );
+            SeedDb.Populate(context);
         }
     }
 }
