@@ -14,6 +14,8 @@ namespace DevOpsConf2016.Models
         [Key]
         public int ID { get; set; }
         [Required]
+        public Guid AttendeeId { get; set; }
+        [Required]
         public string Title { get; set; }
         [Required]
         public string Abstract { get; set; }
