@@ -29,7 +29,8 @@ namespace DevOpsConf2016.Migrations
                     BlogURL = "http://who.com",
                     Company = "WhoACME",
                     CompanyURL = "http://who.com",
-                    TwitterHandle = "@whovian"
+                    TwitterHandle = "@whovian",
+                    Attendee = attendee
                 };
             var session = new SessionInfo()
             {
@@ -38,13 +39,28 @@ namespace DevOpsConf2016.Migrations
                 Level = TalkLevel.Advanced,
                 Objectives = "Objectives",
                 Requirements = "test",
-                Title = "test",
-                ID = 1
+                Title = "test"
             };
-              
-            speaker.Sessions.Add(session);
+            var sessions = new List<SessionInfo>();
+            sessions.Add(session);
+            speaker.Sessions = sessions;
             attendee.SpeakerInfo = speaker;
             context.Attendees.Add(attendee);
+
+            var secondAttendee = new Attendee()
+            {
+                Id = Guid.NewGuid(),
+                EMail = "who@where.com",
+                FirstName = "Who",
+                LastName = "Attendee",
+                Title = "Analyst"
+,
+            };
+
+            context.Attendees.Add(secondAttendee);
+            context.SaveChanges();
+
+
         }
 
     }

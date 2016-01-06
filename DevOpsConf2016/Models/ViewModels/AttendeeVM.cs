@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Web;
+using System.Web.UI.WebControls;
 
 namespace DevOpsConf2016.Models.ViewModels
 {
@@ -19,7 +20,7 @@ namespace DevOpsConf2016.Models.ViewModels
         public string EMail { get; set; }
 
         public SpeakerVM SpeakerInfo { get; set; }
-
+        
         public bool IsSpeaker
         {
             get { return (SpeakerInfo != null); }

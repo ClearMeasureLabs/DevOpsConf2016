@@ -13,7 +13,7 @@ namespace DevOpsConf2016.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201601061813292_initial"; }
+            get { return "201601062206207_initial"; }
         }
         
         string IMigrationMetadata.Source

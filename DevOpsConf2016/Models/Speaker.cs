@@ -9,10 +9,11 @@ namespace DevOpsConf2016.Models
 {
     public class Speaker
     {
-        public Speaker()
-        {
-            Sessions = new List<SessionInfo>();
-        }
+        //public Speaker()
+        //{
+        //    Sessions = new List<SessionInfo>();
+        //}
+
         [Key]
         public Guid Id { get; set; }
         [MaxLength(35)]
@@ -25,7 +26,9 @@ namespace DevOpsConf2016.Models
         [Required]
         [MaxLength(150)]        
         public string BlogURL { get; set; }
-        
+
+        public virtual Attendee Attendee { get; set; }
+
         public virtual ICollection<SessionInfo> Sessions { get; set; }
     }
 }

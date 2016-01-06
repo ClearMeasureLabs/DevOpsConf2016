@@ -19,7 +19,7 @@ namespace DevOpsConf2016.Contexts
             modelBuilder.Entity<Attendee>()
                 .HasKey(e => e.Id)
                 .HasOptional(e => e.SpeakerInfo)
-                .WithRequired();
+                .WithRequired(x => x.Attendee);
 
             modelBuilder.Entity<Speaker>()
                 .HasKey(e => e.Id)

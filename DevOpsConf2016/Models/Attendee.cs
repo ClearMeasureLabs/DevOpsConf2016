@@ -6,10 +6,10 @@ namespace DevOpsConf2016.Models
 {
     public class Attendee
     {
-        public Attendee ()
-        {
-            SpeakerInfo = new Speaker();
-        }
+        //public Attendee ()
+        //{
+        //    SpeakerInfo = new Speaker();
+        //}
 
         [Key]
         [Required]

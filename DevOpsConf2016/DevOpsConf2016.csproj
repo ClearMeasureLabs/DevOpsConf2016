@@ -139,9 +139,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201601061813292_initial.cs" />
-    <Compile Include="Migrations\201601061813292_initial.Designer.cs">
-      <DependentUpon>201601061813292_initial.cs</DependentUpon>
+    <Compile Include="Migrations\201601062206207_initial.cs" />
+    <Compile Include="Migrations\201601062206207_initial.Designer.cs">
+      <DependentUpon>201601062206207_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Migrations\SeedDb.cs" />
@@ -150,6 +150,7 @@
     <Compile Include="Models\SessionInfo.cs" />
     <Compile Include="Models\Speaker.cs" />
     <Compile Include="Models\ViewModels\AttendeeVM.cs" />
+    <Compile Include="Models\ViewModels\SessionInfoVM.cs" />
     <Compile Include="Models\ViewModels\SpeakerVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -215,8 +216,8 @@
     <Content Include="Scripts\jquery-2.1.4.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201601061813292_initial.resx">
-      <DependentUpon>201601061813292_initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201601062206207_initial.resx">
+      <DependentUpon>201601062206207_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
