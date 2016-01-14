@@ -8,42 +8,44 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar">
+    <nav class="navbar navbar-default">
         <div class="container">
-            @*<div class="navbar-header">
+            <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>*@
+                <a class="navbar-brand" href="/"><img src="/Content/images/logo-clearmeasure.png"/></a>
+            </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Why attend", "Index", "Home")</li>
                     <li>@Html.ActionLink("Sesions", "About", "Home")</li>
                     <li>@Html.ActionLink("Sponsors", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Register", "Register", "Home")</li>
+                    <li>@Html.ActionLink("Register", "Index", "Attendees")</li>
                 </ul>
             </div>
         </div>
-    </div>
+    </nav>
 
 <div id="home-bar">
     <div class="container">
-        <div id="title">
+        <div id="title" class="col-sm-6 col-md-3">
             Clear Measure 2016<br/>
             Dev Ops Conference<br/>
             <div>February 1, 2016 - Online</div>
         </div>
 
-        <div id="message">
+        <div id="message" class="col-sm-3 col-md-6">
             Join us on air as we host our annual Dev Ops
             conference! Something exciting, blah, blah, blah.
             You are in for a treat!
             <div> - Jeffrey Palermo, CEO, Clear Measure</div>
         </div>
+
+        <div class="col-xs-3"></div>
     </div>
 </div>
 
