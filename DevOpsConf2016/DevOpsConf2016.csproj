@@ -160,6 +160,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\images\background.png" />
+    <Content Include="Content\images\call-for-speakers.png" />
     <Content Include="Content\images\hangouts.png" />
     <Content Include="Content\images\logo-clearmeasure.png" />
     <Content Include="favicon.ico" />
@@ -176,6 +177,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\DevOpsConf2016 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />

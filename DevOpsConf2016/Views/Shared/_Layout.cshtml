@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>DevOpsConf 2016 @ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
@@ -21,9 +21,9 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Why attend", "Index", "Home")</li>
+                    @*<li>@Html.ActionLink("Why attend", "Index", "Home")</li>
                     <li>@Html.ActionLink("Sesions", "About", "Home")</li>
-                    <li>@Html.ActionLink("Sponsors", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Sponsors", "Contact", "Home")</li>*@
                     <li>@Html.ActionLink("Register", "Index", "Attendees")</li>
                 </ul>
             </div>
@@ -35,14 +35,13 @@
         <div id="title" class="col-sm-6 col-md-3">
             Clear Measure 2016<br/>
             Dev Ops Conference<br/>
-            <div>February 1, 2016 - Online</div>
+            <div>February 15, 2016 - Online</div>
         </div>
 
         <div id="message" class="col-sm-3 col-md-6">
-            Join us on air as we host our annual Dev Ops
-            conference! Something exciting, blah, blah, blah.
-            You are in for a treat!
-            <div> - Jeffrey Palermo, CEO, Clear Measure</div>
+            Join us on air as we host our annual online Dev Ops
+            conference! Hear the latest on building, evolving, and operating rapidly-changing resilient systems at scale!
+            <div style="text-align:right"> - Jeffrey Palermo, CEO, Clear Measure</div>
         </div>
 
         <div class="col-xs-3"></div>
@@ -53,7 +52,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Clear Measure</p>
         </footer>
     </div>
 
