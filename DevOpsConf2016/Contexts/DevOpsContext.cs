@@ -14,6 +14,7 @@ namespace DevOpsConf2016.Contexts
         public DbSet<Attendee> Attendees { get; set; }
         public DbSet<SessionInfo> Sessions { get; set; }
         public DbSet<Speaker> Speakers { get; set; }
+        public DbSet<AbstractSubmission> Abstracts { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -35,7 +36,9 @@ namespace DevOpsConf2016.Contexts
             modelBuilder.Entity<SessionInfo>()
                 .Property(e => e.ID)
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-
+            modelBuilder.Entity<AbstractSubmission>()
+                .Property(x => x.Id)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
         }
     }

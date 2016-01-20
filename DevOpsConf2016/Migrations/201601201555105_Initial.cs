@@ -8,6 +8,20 @@ namespace DevOpsConf2016.Migrations
         public override void Up()
         {
             CreateTable(
+                "dbo.AbstractSubmissions",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        FirstName = c.String(nullable: false, maxLength: 50),
+                        LastName = c.String(nullable: false, maxLength: 50),
+                        EMail = c.String(nullable: false, maxLength: 100),
+                        ContactNumber = c.String(nullable: false, maxLength: 18),
+                        Title = c.String(nullable: false, maxLength: 100),
+                        Description = c.String(nullable: false, maxLength: 250),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
                 "dbo.Attendees",
                 c => new
                     {
@@ -75,6 +89,7 @@ namespace DevOpsConf2016.Migrations
             DropTable("dbo.Sessions");
             DropTable("dbo.Speakers");
             DropTable("dbo.Attendees");
+            DropTable("dbo.AbstractSubmissions");
         }
     }
 }

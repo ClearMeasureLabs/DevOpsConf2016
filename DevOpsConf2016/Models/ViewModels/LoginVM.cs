@@ -9,7 +9,7 @@ namespace DevOpsConf2016.Models.ViewModels
     public class LoginVM
     {
         [Required]
-        [Display(Name = "User Name")]
+        [Display(Name = "E-Mail Address")]
         public string UserName { get; set; }
         [Required, DataType(DataType.Password)]
         public string Password { get; set; }
