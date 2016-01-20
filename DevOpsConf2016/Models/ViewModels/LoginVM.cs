@@ -16,5 +16,7 @@ namespace DevOpsConf2016.Models.ViewModels
         
         public bool RememberMe { get; set; }
 
+        public virtual AttendeeVM AttendeeInfo { get; set; }
+
     }
 }

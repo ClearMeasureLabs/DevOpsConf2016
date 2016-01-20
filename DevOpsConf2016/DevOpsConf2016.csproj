@@ -226,6 +226,7 @@
     <Content Include="Views\Sessions\Details.cshtml" />
     <Content Include="Views\Sessions\Edit.cshtml" />
     <Content Include="Views\Sessions\Index.cshtml" />
+    <Content Include="Views\Auth\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

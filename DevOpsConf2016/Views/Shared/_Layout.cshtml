@@ -24,10 +24,11 @@
                     @*<li>@Html.ActionLink("Why attend", "Index", "Home")</li>
                     <li>@Html.ActionLink("Sesions", "About", "Home")</li>
                     <li>@Html.ActionLink("Sponsors", "Contact", "Home")</li>*@
-                    <li>@Html.ActionLink("Register", "Index", "Attendees")</li>
+                    <li>@Html.ActionLink("Register", "Register", "Auth")</li> @*Need to hide IF the user is Authenticated!*@
                 </ul>
             </div>
         </div>
+        @*Add login control here.*@
     </nav>
 
 <div id="home-bar">

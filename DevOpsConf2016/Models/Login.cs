@@ -37,11 +37,14 @@ namespace DevOpsConf2016.Models
         public static Login ValidateUser(string userName, string password)
         {
             Login user;
-
+            
             using (var db = new DevOpsContext())
             {
                 var pw = password.EncodeToSHA1();
-                user = db.Users.FirstOrDefault(x => x.EMail == userName && x.Password == pw);
+                user = db.Users
+                    .Include("UserInfo")
+                    .FirstOrDefault(x => x.EMail == userName && x.Password == pw);
+
             }
             return user;
         }

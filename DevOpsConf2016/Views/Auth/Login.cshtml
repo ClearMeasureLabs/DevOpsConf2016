@@ -30,7 +30,11 @@
                 @Html.CheckBoxFor(u => u.RememberMe)
                 @Html.LabelFor(u => u.RememberMe)
             </div>
-            <input type="submit" value="Log In" />
+            <input type="submit" value="Log In"/>
         </fieldset>
     </div>
+    <div>
+        @Html.ActionLink("Register", "Register")
+    </div>
+
 }

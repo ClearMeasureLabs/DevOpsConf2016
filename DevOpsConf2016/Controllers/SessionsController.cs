@@ -32,7 +32,7 @@ namespace DevOpsConf2016.Controllers
         public async Task<ActionResult> Index()
         {
             var data = await db.Speakers.FirstOrDefaultAsync(x => x.Id == User.Id);
-            var sessions = Mapper.Map<Speaker, SpeakerVM>(data);
+            var sessions = Mapper.Map<Speaker, SpeakerVM>(data).Sessions;
             return View(sessions);
         }
 
@@ -66,7 +66,8 @@ namespace DevOpsConf2016.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Sessions.Add(sessionInfo);
+                var speaker = db.Speakers.Include("Sessions").FirstOrDefault(x => x.Id == User.Id);
+                speaker.Sessions.Add(sessionInfo);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
