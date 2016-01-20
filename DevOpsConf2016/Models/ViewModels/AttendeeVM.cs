@@ -17,7 +17,7 @@ namespace DevOpsConf2016.Models.ViewModels
 
         public string Title { get; set; }
 
-        public string EMail { get; set; }
+        public string Twitter { get; set; }
 
         public SpeakerVM SpeakerInfo { get; set; }
         
