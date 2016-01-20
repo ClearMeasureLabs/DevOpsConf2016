@@ -29,6 +29,7 @@ namespace DevOpsConf2016.Migrations
                         FirstName = c.String(nullable: false, maxLength: 50),
                         LastName = c.String(nullable: false, maxLength: 50),
                         Title = c.String(nullable: false, maxLength: 60),
+                        Twitter = c.String(nullable: false, maxLength: 30),
                     })
                 .PrimaryKey(t => t.Id);
             

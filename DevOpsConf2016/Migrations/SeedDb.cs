@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Web;
+using DevOpsConf2016.Contexts;
 using DevOpsConf2016.Extensions;
 using DevOpsConf2016.Models;
 
@@ -77,5 +78,32 @@ namespace DevOpsConf2016.Migrations
 
         }
 
+        internal static void PopulateProduction(DevOpsContext context)
+        {
+            var id = Guid.Parse("e63c9f47-db7e-4ad0-ac2c-fc8df06491f5");
+            var login = new Login()
+            {
+                EMail = "gus@clear-measure.com",
+                Id = id,
+                Password = "ClearMeasure2016".EncodeToSHA1(),
+            };
+            var speaker = new Speaker()
+            {
+                Id = id,
+                BlogURL = "http://blog.kosmikinnovations.com",
+                Company = "Clear-Measure",
+                CompanyURL = "http://www.clear-measure.com"
+            };
+            var attendee = new Attendee()
+            {
+                Id = id,
+                FirstName = "Gus",
+                LastName = "Emery",
+                Title = "Principal Architect",
+                Twitter = "@n_f_e",
+                UserInfo = login
+            };
+
+        }
     }
 }

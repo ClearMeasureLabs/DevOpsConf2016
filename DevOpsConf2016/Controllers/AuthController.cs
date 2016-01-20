@@ -106,7 +106,8 @@ namespace DevOpsConf2016.Controllers
                         Id = id,
                         FirstName = user.AttendeeInfo.FirstName,
                         LastName = user.AttendeeInfo.LastName,
-                        Title = user.AttendeeInfo.Title
+                        Title = user.AttendeeInfo.Title,
+                        Twitter = user.AttendeeInfo.Twitter
                     }
                 };
 

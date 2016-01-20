@@ -26,7 +26,8 @@ namespace DevOpsConf2016.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
-            SeedDb.Populate(context);
+            //SeedDb.Populate(context);
+            SeedDb.PopulateProduction(context);
         }
     }
 }
