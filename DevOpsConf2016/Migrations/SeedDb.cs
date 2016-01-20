@@ -24,7 +24,6 @@ namespace DevOpsConf2016.Migrations
             var attendee = new Attendee()
             {
                 Id = id,
-                EMail = "who@where.com",
                 FirstName = "Who",
                 LastName = "Villian",
                 Title = "Sr. Whovener"
@@ -58,7 +57,6 @@ namespace DevOpsConf2016.Migrations
             var secondAttendee = new Attendee()
             {
                 Id = Guid.NewGuid(),
-                EMail = "who@where.com",
                 FirstName = "Who",
                 LastName = "Attendee",
                 Title = "Analyst"

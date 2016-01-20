@@ -27,9 +27,6 @@ namespace DevOpsConf2016.Models
         [MaxLength(60)]
         public string Title { get; set; }
 
-        [Required]
-        [MaxLength(100)]
-        public string EMail { get; set; }
 
         public virtual Speaker SpeakerInfo { get; set; }
         public virtual Login UserInfo { get; set; }

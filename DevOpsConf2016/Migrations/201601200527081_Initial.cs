@@ -15,7 +15,6 @@ namespace DevOpsConf2016.Migrations
                         FirstName = c.String(nullable: false, maxLength: 50),
                         LastName = c.String(nullable: false, maxLength: 50),
                         Title = c.String(nullable: false, maxLength: 60),
-                        EMail = c.String(nullable: false, maxLength: 100),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -55,8 +54,8 @@ namespace DevOpsConf2016.Migrations
                 c => new
                     {
                         Id = c.Guid(nullable: false),
-                        EMail = c.String(nullable: false),
-                        Password = c.String(nullable: false),
+                        EMail = c.String(nullable: false, maxLength: 150),
+                        Password = c.String(nullable: false, maxLength: 30),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Attendees", t => t.Id)

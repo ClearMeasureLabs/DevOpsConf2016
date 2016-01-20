@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 using System.Web;
 using System.Web.Script.Serialization;
 using System.Web.Security;
+using AutoMapper;
 using DevOpsConf2016.Contexts;
 using DevOpsConf2016.Controllers;
 using DevOpsConf2016.Extensions;
@@ -21,12 +22,22 @@ namespace DevOpsConf2016.Models
         public Guid Id { get; set; }
 
         [Required]
+        [MaxLength(150)]
         [Display(Name = "Email")]
         public string EMail { get; set; }
 
         [Required]
+        [MaxLength(30)]
         [DataType(DataType.Password)]
         public string Password { get; set; }
+
+        [Required]
+        [IgnoreMap]
+        [NotMapped]
+        [Display(Name = "Confirm Password")]
+        [Compare("Password", ErrorMessage = "Your passwords must match!")]
+        [DataType(DataType.Password)]
+        public string Password2 { get; set; }
 
         public virtual Attendee UserInfo { get; set; }
 

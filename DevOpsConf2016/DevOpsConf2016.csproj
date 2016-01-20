@@ -136,9 +136,9 @@
     <Compile Include="Contexts\DevOpsContext.cs" />
     <Compile Include="Controllers\AttendeesController.cs" />
     <Compile Include="Controllers\AuthController.cs" />
-    <Compile Include="Migrations\201601200500500_Initial.cs" />
-    <Compile Include="Migrations\201601200500500_Initial.Designer.cs">
-      <DependentUpon>201601200500500_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201601200527081_Initial.cs" />
+    <Compile Include="Migrations\201601200527081_Initial.Designer.cs">
+      <DependentUpon>201601200527081_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\CustomPrincipalSerializeModel.cs" />
     <Compile Include="Models\CustomPrincipal.cs" />
@@ -228,8 +228,8 @@
     <Content Include="Scripts\jquery-2.1.4.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201601200500500_Initial.resx">
-      <DependentUpon>201601200500500_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201601200527081_Initial.resx">
+      <DependentUpon>201601200527081_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
