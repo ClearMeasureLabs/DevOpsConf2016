@@ -135,21 +135,27 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Contexts\DevOpsContext.cs" />
     <Compile Include="Controllers\AttendeesController.cs" />
+    <Compile Include="Controllers\AuthController.cs" />
+    <Compile Include="Migrations\201601200500500_Initial.cs" />
+    <Compile Include="Migrations\201601200500500_Initial.Designer.cs">
+      <DependentUpon>201601200500500_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomPrincipalSerializeModel.cs" />
+    <Compile Include="Models\CustomPrincipal.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Extensions\Extensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201601062206207_initial.cs" />
-    <Compile Include="Migrations\201601062206207_initial.Designer.cs">
-      <DependentUpon>201601062206207_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Migrations\SeedDb.cs" />
     <Compile Include="Models\Attendee.cs" />
     <Compile Include="Models\Enums.cs" />
+    <Compile Include="Models\Login.cs" />
     <Compile Include="Models\SessionInfo.cs" />
     <Compile Include="Models\Speaker.cs" />
     <Compile Include="Models\ViewModels\AttendeeVM.cs" />
+    <Compile Include="Models\ViewModels\LoginVM.cs" />
     <Compile Include="Models\ViewModels\SessionInfoVM.cs" />
     <Compile Include="Models\ViewModels\SpeakerVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -214,6 +220,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Auth\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -221,8 +228,8 @@
     <Content Include="Scripts\jquery-2.1.4.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201601062206207_initial.resx">
-      <DependentUpon>201601062206207_initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201601200500500_Initial.resx">
+      <DependentUpon>201601200500500_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

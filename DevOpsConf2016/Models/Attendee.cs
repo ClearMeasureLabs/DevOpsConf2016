@@ -32,6 +32,6 @@ namespace DevOpsConf2016.Models
         public string EMail { get; set; }
 
         public virtual Speaker SpeakerInfo { get; set; }
-
+        public virtual Login UserInfo { get; set; }
     }
 }

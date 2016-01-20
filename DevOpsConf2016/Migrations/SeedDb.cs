@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Web;
+using DevOpsConf2016.Extensions;
 using DevOpsConf2016.Models;
 
 namespace DevOpsConf2016.Migrations
@@ -12,6 +13,13 @@ namespace DevOpsConf2016.Migrations
         public static void Populate(DevOpsConf2016.Contexts.DevOpsContext context)
         {
             var id = Guid.NewGuid();
+            var login = new Login()
+            {
+                Id = id,
+                EMail = "who@where.com",
+                Password = "test".EncodeToSHA1()
+            };
+            context.Users.Add(login);
 
             var attendee = new Attendee()
             {
