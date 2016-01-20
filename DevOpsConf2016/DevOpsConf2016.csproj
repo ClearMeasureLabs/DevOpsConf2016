@@ -136,9 +136,9 @@
     <Compile Include="Contexts\DevOpsContext.cs" />
     <Compile Include="Controllers\AttendeesController.cs" />
     <Compile Include="Controllers\AuthController.cs" />
-    <Compile Include="Migrations\201601200527081_Initial.cs" />
-    <Compile Include="Migrations\201601200527081_Initial.Designer.cs">
-      <DependentUpon>201601200527081_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201601200608466_Initial.cs" />
+    <Compile Include="Migrations\201601200608466_Initial.Designer.cs">
+      <DependentUpon>201601200608466_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\CustomPrincipalSerializeModel.cs" />
     <Compile Include="Models\CustomPrincipal.cs" />
@@ -156,6 +156,7 @@
     <Compile Include="Models\Speaker.cs" />
     <Compile Include="Models\ViewModels\AttendeeVM.cs" />
     <Compile Include="Models\ViewModels\LoginVM.cs" />
+    <Compile Include="Models\ViewModels\RegisterVM.cs" />
     <Compile Include="Models\ViewModels\SessionInfoVM.cs" />
     <Compile Include="Models\ViewModels\SpeakerVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -217,10 +218,10 @@
     <Content Include="Views\Attendees\Details.cshtml" />
     <Content Include="Views\Attendees\Edit.cshtml" />
     <Content Include="Views\Attendees\Index.cshtml" />
+    <Content Include="Views\Auth\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Auth\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -228,8 +229,8 @@
     <Content Include="Scripts\jquery-2.1.4.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201601200527081_Initial.resx">
-      <DependentUpon>201601200527081_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201601200608466_Initial.resx">
+      <DependentUpon>201601200608466_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

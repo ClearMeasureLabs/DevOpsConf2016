@@ -19,14 +19,14 @@ namespace DevOpsConf2016.Migrations
                 EMail = "who@where.com",
                 Password = "test".EncodeToSHA1()
             };
-            context.Users.Add(login);
 
             var attendee = new Attendee()
             {
                 Id = id,
                 FirstName = "Who",
                 LastName = "Villian",
-                Title = "Sr. Whovener"
+                Title = "Sr. Whovener",
+                UserInfo = login
             };
 
             var speaker =

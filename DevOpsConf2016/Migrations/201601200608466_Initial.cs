@@ -55,7 +55,7 @@ namespace DevOpsConf2016.Migrations
                     {
                         Id = c.Guid(nullable: false),
                         EMail = c.String(nullable: false, maxLength: 150),
-                        Password = c.String(nullable: false, maxLength: 30),
+                        Password = c.String(nullable: false, maxLength: 50),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Attendees", t => t.Id)

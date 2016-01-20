@@ -13,12 +13,14 @@ namespace DevOpsConf2016.Controllers
     public class AuthController : Controller
     {
         // GET: Auth
+        [HttpGet]
         public ActionResult Login(string url)
         {
-
-            return View();
+            var data = new LoginVM();
+            return View(data);
         }
 
+        [HttpPost]
         public ActionResult Login(LoginVM login)
         {
             if (ModelState.IsValid)

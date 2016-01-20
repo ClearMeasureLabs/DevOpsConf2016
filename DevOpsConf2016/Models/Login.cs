@@ -27,17 +27,10 @@ namespace DevOpsConf2016.Models
         public string EMail { get; set; }
 
         [Required]
-        [MaxLength(30)]
+        [MaxLength(50)]
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
-        [Required]
-        [IgnoreMap]
-        [NotMapped]
-        [Display(Name = "Confirm Password")]
-        [Compare("Password", ErrorMessage = "Your passwords must match!")]
-        [DataType(DataType.Password)]
-        public string Password2 { get; set; }
 
         public virtual Attendee UserInfo { get; set; }
 
@@ -47,7 +40,8 @@ namespace DevOpsConf2016.Models
 
             using (var db = new DevOpsContext())
             {
-                user = db.Users.FirstOrDefault(x => x.EMail == userName && x.Password == password.EncodeToSHA1());
+                var pw = password.EncodeToSHA1();
+                user = db.Users.FirstOrDefault(x => x.EMail == userName && x.Password == pw);
             }
             return user;
         }
