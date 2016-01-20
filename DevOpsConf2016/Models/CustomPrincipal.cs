@@ -3,7 +3,7 @@ using System.Security.Principal;
 
 namespace DevOpsConf2016.Controllers
 {
-    internal class CustomPrincipal : IPrincipal
+    public class CustomPrincipal : IPrincipal
     {
         public CustomPrincipal(string email)
         {

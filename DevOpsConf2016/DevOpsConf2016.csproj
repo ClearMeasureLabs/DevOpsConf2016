@@ -136,9 +136,11 @@
     <Compile Include="Contexts\DevOpsContext.cs" />
     <Compile Include="Controllers\AttendeesController.cs" />
     <Compile Include="Controllers\AuthController.cs" />
-    <Compile Include="Migrations\201601200608466_Initial.cs" />
-    <Compile Include="Migrations\201601200608466_Initial.Designer.cs">
-      <DependentUpon>201601200608466_Initial.cs</DependentUpon>
+    <Compile Include="Controllers\ControllerBase.cs" />
+    <Compile Include="Controllers\SessionsController.cs" />
+    <Compile Include="Migrations\201601200725130_Initial.cs" />
+    <Compile Include="Migrations\201601200725130_Initial.Designer.cs">
+      <DependentUpon>201601200725130_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\CustomPrincipalSerializeModel.cs" />
     <Compile Include="Models\CustomPrincipal.cs" />
@@ -219,9 +221,15 @@
     <Content Include="Views\Attendees\Edit.cshtml" />
     <Content Include="Views\Attendees\Index.cshtml" />
     <Content Include="Views\Auth\Login.cshtml" />
+    <Content Include="Views\Sessions\Create.cshtml" />
+    <Content Include="Views\Sessions\Delete.cshtml" />
+    <Content Include="Views\Sessions\Details.cshtml" />
+    <Content Include="Views\Sessions\Edit.cshtml" />
+    <Content Include="Views\Sessions\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\ControllerBase\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -229,8 +237,8 @@
     <Content Include="Scripts\jquery-2.1.4.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201601200608466_Initial.resx">
-      <DependentUpon>201601200608466_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201601200725130_Initial.resx">
+      <DependentUpon>201601200725130_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

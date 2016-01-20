@@ -12,7 +12,7 @@ namespace DevOpsConf2016.Migrations
     {
         public static void Populate(DevOpsConf2016.Contexts.DevOpsContext context)
         {
-            var id = Guid.NewGuid();
+            var id = Guid.Parse("e63c9f47-db7e-4ad0-ac2c-fc8df06491f5");
             var login = new Login()
             {
                 Id = id,
@@ -52,15 +52,23 @@ namespace DevOpsConf2016.Migrations
             sessions.Add(session);
             speaker.Sessions = sessions;
             attendee.SpeakerInfo = speaker;
-            context.Attendees.Add(attendee);
+            context.Attendees.AddOrUpdate(x => x.Id, attendee);
 
+
+            id = Guid.Parse("235ff3e5-8abe-4ef5-95b1-8fb8f2a4ddc5");
+            var secondLogin = new Login()
+            {
+                Id = id,
+                EMail = "prez@whitehouse.gov",
+                Password = "test".EncodeToSHA1()
+            };
             var secondAttendee = new Attendee()
             {
-                Id = Guid.NewGuid(),
+                Id = secondLogin.Id,
                 FirstName = "Who",
                 LastName = "Attendee",
-                Title = "Analyst"
-,
+                Title = "Analyst",
+                UserInfo = secondLogin
             };
 
             context.Attendees.Add(secondAttendee);
