@@ -31,7 +31,7 @@ namespace DevOpsConf2016.Controllers
             return View();
         }
 
-        
+        [HttpPost]
         public ActionResult LogOff()
         {
             FormsAuthentication.SignOut();
