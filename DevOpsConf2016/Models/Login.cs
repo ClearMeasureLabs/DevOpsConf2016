@@ -33,6 +33,8 @@ namespace DevOpsConf2016.Models
 
 
         public virtual Attendee UserInfo { get; set; }
+         
+        public virtual ICollection<Role> Roles { get; set; }
 
         public static Login ValidateUser(string userName, string password)
         {
@@ -43,6 +45,7 @@ namespace DevOpsConf2016.Models
                 var pw = password.EncodeToSHA1();
                 user = db.Users
                     .Include("UserInfo")
+                    .Include("Roles")
                     .FirstOrDefault(x => x.EMail == userName && x.Password == pw);
 
             }

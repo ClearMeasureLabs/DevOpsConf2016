@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace DevOpsConf2016.Models
 {
@@ -7,5 +8,6 @@ namespace DevOpsConf2016.Models
         public Guid Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public string[] Roles { get; set; } 
     }
 }

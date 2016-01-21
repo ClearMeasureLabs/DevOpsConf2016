@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using DevOpsConf2016.Models;
 
 namespace DevOpsConf2016.Contexts
@@ -15,6 +16,8 @@ namespace DevOpsConf2016.Contexts
         public DbSet<SessionInfo> Sessions { get; set; }
         public DbSet<Speaker> Speakers { get; set; }
         public DbSet<AbstractSubmission> Abstracts { get; set; }
+        public DbSet<Role> Roles { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -39,7 +42,10 @@ namespace DevOpsConf2016.Contexts
             modelBuilder.Entity<AbstractSubmission>()
                 .Property(x => x.Id)
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-
+            modelBuilder.Entity<Role>()
+                .HasKey(e => e.Id)
+                .HasMany(e => e.Users)
+                .WithMany(e => e.Roles);
         }
     }
 }

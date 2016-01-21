@@ -16,9 +16,7 @@ namespace DevOpsConf2016.Models
 
         [Key]
         public Guid Id { get; set; }
-        [MaxLength(35)]
-        public string TwitterHandle { get; set; }
-[MaxLength(50)]
+        [MaxLength(50)]
         public string Company { get; set; }
         [Required]
         [MaxLength(150)]

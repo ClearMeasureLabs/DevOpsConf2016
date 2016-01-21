@@ -20,6 +20,6 @@ namespace DevOpsConf2016.Models.ViewModels
         public string Password2 { get; set; }
 
         public AttendeeVM AttendeeInfo { get; set; }
-
+        public SpeakerVM SpeakerInfo { get; set; }
     }
 }

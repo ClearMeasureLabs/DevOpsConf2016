@@ -33,11 +33,10 @@ namespace DevOpsConf2016
 
                 CustomPrincipalSerializeModel serializeModel = serializer.Deserialize<CustomPrincipalSerializeModel>(authTicket.UserData);
 
-                CustomPrincipal newUser = new CustomPrincipal(authTicket.Name);
+                CustomPrincipal newUser = new CustomPrincipal(authTicket.Name, serializeModel.Roles);
                 newUser.Id = serializeModel.Id;
                 newUser.FirstName = serializeModel.FirstName;
                 newUser.LastName = serializeModel.LastName;
-
                 HttpContext.Current.User = newUser;
             }
         }

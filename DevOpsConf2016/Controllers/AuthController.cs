@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Script.Serialization;
@@ -24,14 +25,22 @@ namespace DevOpsConf2016.Controllers
 
         // GET: Auth
         [HttpGet]
-        public ActionResult Login()
+        public ActionResult Login(string returnUrl)
         {
-            var data = new LoginVM();
-            return View(data);
+            ViewBag.ReturnUrl = returnUrl;
+            return View();
+        }
+
+        
+        public ActionResult LogOff()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index", "Home");
         }
 
         [HttpPost]
-        public ActionResult Login(LoginVM login, string returnUrl = "")
+        [ValidateAntiForgeryToken]
+        public ActionResult Login(LoginVM login, string returnUrl)
         {
             if (ModelState.IsValid)
             {
@@ -43,6 +52,7 @@ namespace DevOpsConf2016.Controllers
                     serializeModel.Id = user.Id;
                     serializeModel.FirstName = user.UserInfo.FirstName;
                     serializeModel.LastName = user.UserInfo.LastName;
+                    serializeModel.Roles = user.Roles.Select(x => x.Description).ToArray();
 
                     JavaScriptSerializer serializer = new JavaScriptSerializer();
 
@@ -100,14 +110,21 @@ namespace DevOpsConf2016.Controllers
                 {
                     EMail = user.UserName,
                     Id = id,
-                    Password = user.Password,
+                    Password = user.Password.EncodeToSHA1(),
                     UserInfo = new Attendee()
                     {
                         Id = id,
                         FirstName = user.AttendeeInfo.FirstName,
                         LastName = user.AttendeeInfo.LastName,
                         Title = user.AttendeeInfo.Title,
-                        Twitter = user.AttendeeInfo.Twitter
+                        Twitter = user.AttendeeInfo.Twitter,
+                        SpeakerInfo = new Speaker()
+                        {
+                            Id = id,
+                            BlogURL = vm.SpeakerInfo.BlogURL,
+                            Company = vm.SpeakerInfo.Company,
+                            CompanyURL = vm.SpeakerInfo.CompanyURL
+                        }
                     }
                 };
 

@@ -13,6 +13,8 @@ namespace DevOpsConf2016.Migrations
     {
         public static void Populate(DevOpsConf2016.Contexts.DevOpsContext context)
         {
+            PopulateRoles(context);
+
             var id = Guid.Parse("e63c9f47-db7e-4ad0-ac2c-fc8df06491f5");
             var login = new Login()
             {
@@ -27,6 +29,7 @@ namespace DevOpsConf2016.Migrations
                 FirstName = "Who",
                 LastName = "Villian",
                 Title = "Sr. Whovener",
+                Twitter = "@whovian",
                 UserInfo = login
             };
 
@@ -37,7 +40,7 @@ namespace DevOpsConf2016.Migrations
                     BlogURL = "http://who.com",
                     Company = "WhoACME",
                     CompanyURL = "http://who.com",
-                    TwitterHandle = "@whovian",
+                    
                     Attendee = attendee
                 };
             var session = new SessionInfo()
@@ -78,15 +81,38 @@ namespace DevOpsConf2016.Migrations
 
         }
 
+        private static void PopulateRoles(DevOpsContext context)
+        {
+            var role = new Role()
+            {
+                Description = "Admin",
+                Id = 1
+            };
+
+            context.Roles.AddOrUpdate(x => x.Id, role);
+
+            var role2 = new Role()
+            {
+                Description = "User",
+                Id = 2
+            };
+            context.Roles.AddOrUpdate(x => x.Id, role2);
+        }
+
         internal static void PopulateProduction(DevOpsContext context)
         {
+            PopulateRoles(context);
+            var admin = context.Roles.Find(1);
+
             var id = Guid.Parse("e63c9f47-db7e-4ad0-ac2c-fc8df06491f5");
             var login = new Login()
             {
                 EMail = "gus@clear-measure.com",
                 Id = id,
                 Password = "ClearMeasure2016".EncodeToSHA1(),
+                Roles = new List<Role>() {admin},
             };
+
             var speaker = new Speaker()
             {
                 Id = id,
@@ -103,7 +129,8 @@ namespace DevOpsConf2016.Migrations
                 Twitter = "@n_f_e",
                 UserInfo = login
             };
-
+            context.Attendees.AddOrUpdate(x => x.Id, attendee);
+            context.SaveChanges();
         }
     }
 }
