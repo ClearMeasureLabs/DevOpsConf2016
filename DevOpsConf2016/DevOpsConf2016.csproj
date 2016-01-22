@@ -178,6 +178,8 @@
     <Content Include="Content\images\background.png" />
     <Content Include="Content\images\call-for-speakers.png" />
     <Content Include="Content\images\hangouts.png" />
+    <Content Include="Content\images\headshot-lozano.jpg" />
+    <Content Include="Content\images\headshot-palermo.png" />
     <Content Include="Content\images\logo-azureaustin.png" />
     <Content Include="Content\images\logo-clearmeasure.png" />
     <Content Include="Content\images\logo-codethetown.png" />
@@ -244,6 +246,7 @@
     <Content Include="Views\Abstract\Index.cshtml" />
     <Content Include="Views\Abstract\Thankyou.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Home\ConferenceChairs.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
