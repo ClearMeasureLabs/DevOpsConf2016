@@ -178,7 +178,9 @@
     <Content Include="Content\images\background.png" />
     <Content Include="Content\images\call-for-speakers.png" />
     <Content Include="Content\images\hangouts.png" />
+    <Content Include="Content\images\logo-azureaustin.png" />
     <Content Include="Content\images\logo-clearmeasure.png" />
+    <Content Include="Content\images\logo-codethetown.png" />
     <Content Include="Content\images\logo-devops.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />

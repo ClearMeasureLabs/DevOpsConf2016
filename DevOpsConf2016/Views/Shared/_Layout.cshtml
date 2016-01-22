@@ -16,17 +16,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/"><img src="/Content/images/logo-clearmeasure.png"/></a>
                 <a class="navbar-brand" href="/"><img src="/Content/images/logo-devops.png" /></a>
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    @*<li>@Html.ActionLink("Why attend", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Sesions", "About", "Home")</li>
-                    <li>@Html.ActionLink("Sponsors", "Contact", "Home")</li>*@
-                    @*<li>@Html.ActionLink("Register", "Register", "Auth")</li>*@ @*Need to hide IF the user is Authenticated!*@
-                </ul>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
@@ -34,27 +26,33 @@
 
 <div id="home-bar">
     <div class="container">
-        <div id="title" class="col-sm-6 col-md-3">
-            Clear Measure 2016<br/>
-            Dev Ops Conference<br/>
-            <div>February 15, 2016 - Online</div>
+        <div id="title" class="col-xs-8 col-sm-6 col-md-3">
+            DevOpsConf 2016<br/>
+            <div>February 25, 2016 - Online</div>
         </div>
 
         <div id="message" class="col-sm-3 col-md-6">
             Join us on air as we host our annual online Dev Ops
             conference! Hear the latest on building, evolving, and operating rapidly-changing resilient systems at scale!
-            <div style="text-align:right"> - Jeffrey Palermo, CEO, Clear Measure</div>
+            <div style="text-align: right"> - <a style="color: #fff" href="https://twitter.com/jeffreypalermo">Jeffrey Palermo</a>, Microsoft MVP
+            </div>
         </div>
 
-        <div class="col-xs-3"></div>
+        <div class="col-xs-4 col-sm-3"></div>
     </div>
 </div>
 
     <div class="container body-content">
         @RenderBody()
-        <hr />
+        
         <footer>
-            <p>&copy; @DateTime.Now.Year - Clear Measure</p>
+            <hr />
+            <p>DevOpsConf 2016 Sponsors:</p>
+            <div class="col-sm-3"><a href="http://www.clear-measure.com/"><img src="/Content/images/logo-clearmeasure.png" /></a></div>
+            <div class="col-sm-3"><a href="http://www.meetup.com/azureaustin/"><img src="/Content/images/logo-azureaustin.png" /></a></div>
+            <div class="col-sm-3"><a href="http://www.meetup.com/azureaustin/"><img src="/Content/images/logo-codethetown.png" /></a></div>
+            <div class="col-sm-3">&nbsp;</div>
+            <br class="clearfix" />
         </footer>
     </div>
 
