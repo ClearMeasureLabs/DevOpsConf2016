@@ -1,0 +1,73 @@
+﻿@model IEnumerable<DevOpsConf2016.Models.Login>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EMail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserInfo.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserInfo.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserInfo.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserInfo.Twitter)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserInfo.SpeakerInfo.Company)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserInfo.SpeakerInfo.CompanyURL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserInfo.SpeakerInfo.BlogURL)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserInfo.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserInfo.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserInfo.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserInfo.Twitter)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserInfo.SpeakerInfo.Company)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserInfo.SpeakerInfo.CompanyURL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserInfo.SpeakerInfo.BlogURL)
+        </td>
+        <td>
+            @if (User.IsInRole("Admin"))
+            {
+                @Html.ActionLink("Delete", "Delete", new {Id = item.Id})
+            }
+        </td>
+    </tr>
+}
+
+</table>

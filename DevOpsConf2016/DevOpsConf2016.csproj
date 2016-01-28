@@ -140,6 +140,7 @@
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\ControllerBase.cs" />
     <Compile Include="Controllers\SessionsController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Migrations\201601201725394_Initial.cs" />
     <Compile Include="Migrations\201601201725394_Initial.Designer.cs">
       <DependentUpon>201601201725394_Initial.cs</DependentUpon>
@@ -252,6 +253,11 @@
     <Content Include="Views\Abstract\Thankyou.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\ConferenceChairs.cshtml" />
+    <Content Include="Views\Users\Create.cshtml" />
+    <Content Include="Views\Users\Delete.cshtml" />
+    <Content Include="Views\Users\Details.cshtml" />
+    <Content Include="Views\Users\Edit.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
