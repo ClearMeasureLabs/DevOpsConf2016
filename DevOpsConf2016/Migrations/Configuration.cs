@@ -27,7 +27,7 @@ namespace DevOpsConf2016.Migrations
             //    );
             //
             //SeedDb.Populate(context);
-            //SeedDb.PopulateProduction(context);
+            SeedDb.PopulateProduction(context);
         }
     }
 }

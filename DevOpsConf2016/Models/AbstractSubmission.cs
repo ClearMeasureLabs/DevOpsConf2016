@@ -41,7 +41,7 @@ namespace DevOpsConf2016.Models
 
         [Required]
         [Display(Name = "Brief Description")]
-        [MaxLength(250)]
+        [MaxLength(750)]
         [DataType(DataType.MultilineText)]
         public string Description { get; set; }
     }

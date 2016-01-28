@@ -153,6 +153,10 @@
     <Compile Include="Migrations\201601280014270_AllowNulls.Designer.cs">
       <DependentUpon>201601280014270_AllowNulls.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201601281332365_UpdatedAbstractSpace.cs" />
+    <Compile Include="Migrations\201601281332365_UpdatedAbstractSpace.Designer.cs">
+      <DependentUpon>201601281332365_UpdatedAbstractSpace.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\AbstractSubmission.cs" />
     <Compile Include="Models\CustomPrincipalSerializeModel.cs" />
     <Compile Include="Models\CustomPrincipal.cs" />
@@ -277,6 +281,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201601280014270_AllowNulls.resx">
       <DependentUpon>201601280014270_AllowNulls.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601281332365_UpdatedAbstractSpace.resx">
+      <DependentUpon>201601281332365_UpdatedAbstractSpace.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
