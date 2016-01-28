@@ -12,19 +12,18 @@ using DevOpsConf2016.Models;
 
 namespace DevOpsConf2016.Controllers
 {
+    [Authorize(Roles = "Admin, Chair")]
     public class AbstractController : Controller
     {
         private DevOpsContext db = new DevOpsContext();
 
         // GET: Abstract
-        [Authorize]
         public async Task<ActionResult> Index()
         {
             return View(await db.Abstracts.ToListAsync());
         }
 
         // GET: Abstract/Details/5
-        [Authorize]
         public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
@@ -71,7 +70,6 @@ namespace DevOpsConf2016.Controllers
         }
 
         // GET: Abstract/Edit/5
-        [Authorize]
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
@@ -90,7 +88,6 @@ namespace DevOpsConf2016.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [Authorize]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Edit([Bind(Include = "Id,FirstName,LastName,EMail,ContactNumber,Title,Description")] AbstractSubmission abstractSubmission)
         {
@@ -104,7 +101,6 @@ namespace DevOpsConf2016.Controllers
         }
 
         // GET: Abstract/Delete/5
-        [Authorize]
         public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
@@ -121,7 +117,6 @@ namespace DevOpsConf2016.Controllers
 
         // POST: Abstract/Delete/5
         [HttpPost, ActionName("Delete")]
-        [Authorize]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {

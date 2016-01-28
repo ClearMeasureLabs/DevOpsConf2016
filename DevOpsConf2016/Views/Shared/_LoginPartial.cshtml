@@ -1,5 +1,10 @@
 ﻿<ul class="nav navbar-nav navbar-right">
     <li>@Html.ActionLink("Home", "Index", "Home")</li>
+    @if (User.IsInRole("Admin")||User.IsInRole("Chair"))
+    {
+        <li>@Html.ActionLink("Abstracts", "Index", "Abstract")</li>
+        <li>@Html.ActionLink("Users", "Index", "Users")</li>
+    }
     <li>@Html.ActionLink("Conference Chairs", "ConferenceChairs", "Home")</li>
     @*
         <li>@Html.ActionLink("Sesions", "About", "Home")</li>
