@@ -23,11 +23,9 @@ namespace DevOpsConf2016.Models
         [MaxLength(50)]
         public string LastName { get; set; }
 
-        [Required]
         [MaxLength(60)]
         public string Title { get; set; }
 
-        [Required]
         [Display(Name = "Twitter Handle")]
         [MaxLength(30)]
         public string Twitter { get; set; }

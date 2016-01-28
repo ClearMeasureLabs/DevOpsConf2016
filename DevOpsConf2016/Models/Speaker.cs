@@ -18,10 +18,8 @@ namespace DevOpsConf2016.Models
         public Guid Id { get; set; }
         [MaxLength(50)]
         public string Company { get; set; }
-        [Required]
         [MaxLength(150)]
         public string CompanyURL { get; set; }
-        [Required]
         [MaxLength(150)]        
         public string BlogURL { get; set; }
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Linq;
 using System.Web;
@@ -10,9 +11,9 @@ namespace DevOpsConf2016.Models.ViewModels
     public class AttendeeVM 
     {
         public Guid Id { get; set; }
-
+        [Required]
         public string FirstName { get; set; }
-
+        [Required]
         public string LastName { get; set; }
 
         public string Title { get; set; }
