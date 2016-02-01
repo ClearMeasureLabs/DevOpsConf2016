@@ -3,8 +3,6 @@
 @{
     ViewBag.Title = "Login";
 }
-
-<h2>Login</h2><br/>
 <div>
     @using (Html.BeginForm("Login", "Auth", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
     {

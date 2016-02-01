@@ -17,10 +17,12 @@ namespace DevOpsConf2016.Contexts
         public DbSet<Speaker> Speakers { get; set; }
         public DbSet<AbstractSubmission> Abstracts { get; set; }
         public DbSet<Role> Roles { get; set; }
-
+        public DbSet<Sponsor> Sponsors { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Sponsor>()
+                .HasKey(x => x.Id);
 
             modelBuilder.Entity<Login>()
                 .HasKey(e => e.Id)
