@@ -204,6 +204,7 @@
     <Content Include="Content\images\logo-clearmeasure.png" />
     <Content Include="Content\images\logo-codethetown.png" />
     <Content Include="Content\images\logo-devops.png" />
+    <Content Include="Content\images\logo-octopus-deploy.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
