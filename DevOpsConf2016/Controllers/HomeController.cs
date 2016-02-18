@@ -23,6 +23,13 @@ namespace DevOpsConf2016.Controllers
             return View();
         }
 
+        public ActionResult Sessions()
+        {
+            ViewBag.Message = "Sessions";
+
+            return View();
+        }
+
         public ActionResult ConferenceChairs()
         {
             ViewBag.Message = "Conference Chairs";

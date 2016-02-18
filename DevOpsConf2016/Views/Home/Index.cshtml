@@ -33,8 +33,10 @@
     </div>
     <div class="col-md-4">
         <h2>Sessions</h2>
-        <p>Check back soon for a schedule of sessions and presentations.</p>
-        @*<p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>*@
+        <p>View the schedule of sessions and presentations.</p>
+        <p>
+            @Html.ActionLink("View Sessions »", "Sessions", new { controller = "Home" }, new { @class = "btn btn-default" })
+        </p>
     </div>
     <div class="col-md-4">
         <h2>Sponsors</h2>
