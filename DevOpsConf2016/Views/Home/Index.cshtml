@@ -1,52 +1,93 @@
 ﻿@{
     ViewBag.Title = "Home Page";
+
+    var isAuthenticated = User != null && User.Identity.IsAuthenticated;
+}
+
+@section scripts {
+    <script src="~/scripts/jquery.signalR-2.2.0.min.js"></script>
+    <script src="~/signalr/hubs"></script>
+
+    <script type="text/javascript">
+        function setVideoPlayer(videoId) {
+            var videoUrl = "http://www.youtube.com/embed/" + videoId + "?autoplay=1";
+            $("#youtube").attr("src", videoUrl);
+        }
+
+        $(function () {
+            $.connection.hub.start();
+
+            var videoPlayer = $.connection.videoHub;
+            videoPlayer.client.playVideo = function (videoId) {
+                setVideoPlayer(videoId);
+            };
+
+            $.connection.hub.disconnected(function () {
+                setTimeout(function () {
+                    $.connection.hub.start();
+                }, 5000);
+            });
+        });
+    </script>
 }
 
 @*<div class="jumbotron row">
-    <div class="row">
-        <div class="col-md-7">
-            <h1>DevOpsConf 2016</h1>
-            <p class="lead">
-                Calling all speakers! If you are a leader in the DevOps community or if you have a presentation you have a DevOps topic you would
-                like to speak on then get in touch. Time is short and spots are limited so reach out now.
-            </p>
+        <div class="row">
+            <div class="col-md-7">
+                <h1>DevOpsConf 2016</h1>
+                <p class="lead">
+                    Calling all speakers! If you are a leader in the DevOps community or if you have a presentation you have a DevOps topic you would
+                    like to speak on then get in touch. Time is short and spots are limited so reach out now.
+                </p>
+            </div>
+
+            <div id="call-for-speakers" class="col-md-5"><img class="img-responsive" src="/Content/images/call-for-speakers.png" /></div>
         </div>
 
-        <div id="call-for-speakers" class="col-md-5"><img class="img-responsive" src="/Content/images/call-for-speakers.png" /></div>
+        <div class="row">
+            <br/>
+            @Html.ActionLink("Speakers Register Now", "Create", new {controller="Abstract"}, new { @class = "btn btn-primary btn-lg"})
+        </div>
+
+    </div>*@
+
+@if (isAuthenticated)
+{
+    <br />
+    <div id="player">
+        <div class="embed-container">
+            <iframe id="youtube" width="470" height="264" src="http://www.youtube.com/embed/TXDcHLth8Q4" frameborder="0" allowfullscreen=""></iframe>
+        </div>
+    </div>
+}
+else
+{
+    <div class="spalsh">
+        <img src="/Content/images/dev-ops-conf.jpg" />
     </div>
 
     <div class="row">
-        <br/>
-        @Html.ActionLink("Speakers Register Now", "Create", new {controller="Abstract"}, new { @class = "btn btn-primary btn-lg"})
+        <div class="col-md-4">
+            <h2>Why Attend?</h2>
+            <p>
+                Discover the latest DevOps related solutions, technologies, and tools. Learn new skills and discover whats new through live technical presentations.
+                Explore critics tools like TeamCity, Octopus Deploy, and managing cloud environments like Azure.
+            </p>
+            @*<p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>*@
+        </div>
+        <div class="col-md-4">
+            <h2>Sessions</h2>
+            <p>View the schedule of sessions and presentations.</p>
+            <p>
+                @Html.ActionLink("View Sessions »", "Sessions", new { controller = "Home" }, new { @class = "btn btn-default" })
+            </p>
+        </div>
+        <div class="col-md-4">
+            <h2>Sponsors</h2>
+            <p>Want to become a sponsor? Contact us and we can show you how.</p>
+            <p>
+                @Html.ActionLink("Apply Here »", "Index", new { controller = "Sponsors" }, new { @class = "btn btn-default" })
+            </p>
+        </div>
     </div>
-    
-</div>*@
-
-<div class="spalsh">
-    <img src="/Content/images/dev-ops-conf.jpg"/>
-</div>
-
-<div class="row">
-    <div class="col-md-4">
-        <h2>Why Attend?</h2>
-        <p>
-            Discover the latest DevOps related solutions, technologies, and tools. Learn new skills and discover whats new through live technical presentations.
-            Explore critics tools like TeamCity, Octopus Deploy, and managing cloud environments like Azure.
-        </p>
-        @*<p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>*@
-    </div>
-    <div class="col-md-4">
-        <h2>Sessions</h2>
-        <p>View the schedule of sessions and presentations.</p>
-        <p>
-            @Html.ActionLink("View Sessions »", "Sessions", new { controller = "Home" }, new { @class = "btn btn-default" })
-        </p>
-    </div>
-    <div class="col-md-4">
-        <h2>Sponsors</h2>
-        <p>Want to become a sponsor? Contact us and we can show you how.</p>
-        <p>
-            @Html.ActionLink("Apply Here »", "Index", new { controller = "Sponsors" }, new { @class = "btn btn-default" })
-        </p>
-    </div>
-</div>
+}
