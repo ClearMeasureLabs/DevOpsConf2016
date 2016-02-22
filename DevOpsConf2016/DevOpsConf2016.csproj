@@ -197,6 +197,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\images\background.png" />
     <Content Include="Content\images\call-for-speakers.png" />
+    <Content Include="Content\images\dev-ops-conf.jpg" />
     <Content Include="Content\images\hangouts.png" />
     <Content Include="Content\images\headshot-lozano.jpg" />
     <Content Include="Content\images\headshot-palermo.png" />
@@ -204,6 +205,7 @@
     <Content Include="Content\images\logo-clearmeasure.png" />
     <Content Include="Content\images\logo-codethetown.png" />
     <Content Include="Content\images\logo-devops.png" />
+    <Content Include="Content\images\logo-jetbrains.png" />
     <Content Include="Content\images\logo-octopus-deploy.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
