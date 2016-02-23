@@ -1,4 +1,4 @@
-﻿
+﻿@model DevOpsConf2016.Models.ViewModels.PlayerViewModel
 <h2>Player Admin</h2>
 
 @section scripts {
@@ -10,22 +10,42 @@
     </script>
 }
 
-<form id="videoForm" name="videoForm" class="form-horizontal" role="form">
+<form id="videoForm" name="videoForm" class="form-horizontal" role="form" method="POST" action="@Url.Action("index")">
     <div class="form-group">
         <label for="videoId" class="col-sm-2 control-label">Video ID</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control" id="videoId" placeholder="Video Id" required="required">
+            <input type="text" class="form-control" id="videoId" name="videoId" placeholder="Video Id" value="@Model.VideoId" required="required">
         </div>
     </div>
     <div class="form-group">
         <label for="password" class="col-sm-2 control-label">Password</label>
         <div class="col-sm-10">
-            <input type="password" class="form-control" id="password" placeholder="Password" required="required">
+            <input type="password" class="form-control" id="password" name="password" placeholder="Password" required="required">
         </div>
     </div>
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
             <button type="submit" class="btn btn-primary">Update Video</button>
         </div>
+
+        @if (Model.InvalidPassword)
+        {
+        <div class="col-sm-12">
+            <div class="alert alert-warning alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <strong>Oh no!</strong> Invalid password.
+            </div>
+        </div>
+        }
+
+        @if (Model.UpdatedPlayer)
+        {
+        <div class="col-sm-12">
+            <div class="alert alert-success alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <strong>YESS!</strong> Video player updated...
+            </div>
+        </div>
+        }
     </div>
 </form>
