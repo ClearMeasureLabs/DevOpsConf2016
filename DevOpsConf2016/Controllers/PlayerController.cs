@@ -38,6 +38,12 @@ namespace DevOpsConf2016.Controllers
 
         protected void UpdateVideo(string videoId)
         {
+            if (videoId.StartsWith(@"http://youtu.be/") || videoId.StartsWith(@"https://youtu.be/"))
+            {
+                videoId = videoId.Replace(@"http://youtu.be/", string.Empty);
+                videoId = videoId.Replace(@"https://youtu.be/", string.Empty);
+            }
+
             var hubClients = GetHubClients();
             hubClients.All.PlayVideo(videoId);
 
