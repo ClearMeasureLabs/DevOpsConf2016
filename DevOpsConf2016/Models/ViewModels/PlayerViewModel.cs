@@ -5,5 +5,7 @@
         public string VideoId { get; set; }
         public bool InvalidPassword { get; set; }
         public bool UpdatedPlayer { get; set; }
+
+        public VideoViewModel[] Videos { get; set; }
     }
 }

@@ -1,5 +1,7 @@
-﻿using System.Web.Mvc;
+﻿using System;
 using System.Configuration;
+using System.Linq;
+using System.Web.Mvc;
 
 using DevOpsConf2016.Hubs;
 using DevOpsConf2016.Models.ViewModels;
@@ -13,27 +15,36 @@ namespace DevOpsConf2016.Controllers
     {
         public ActionResult Index()
         {
-            return View(new PlayerViewModel());
+            var viewModel = new PlayerViewModel {Videos = GetVideoList()};
+            return View(viewModel);
         }
 
         [HttpPost]
         public ActionResult Index(PlayerInputModel inputModel)
         {
+            var viewModel = new PlayerViewModel { Videos = GetVideoList() };
+
             if (inputModel == null)
             {
-                return View(new PlayerViewModel());
+                return View(viewModel);
             }
+
+            viewModel.VideoId = inputModel.VideoId;
 
             var password = ConfigurationManager.AppSettings["player.Password"];
             if (!string.Equals(inputModel.Password, password))
             {
-                return View(new PlayerViewModel { InvalidPassword = true, VideoId = inputModel.VideoId});
+                viewModel.InvalidPassword = true;
+                return View(viewModel);
             }
 
             var videoId = inputModel.VideoId;
             UpdateVideo(videoId);
 
-            return View(new PlayerViewModel { UpdatedPlayer = true });
+            viewModel.UpdatedPlayer = true;
+            viewModel.VideoId = null;
+
+            return View(viewModel);
         }
 
         protected void UpdateVideo(string videoId)
@@ -54,6 +65,44 @@ namespace DevOpsConf2016.Controllers
         {
             var hubContext = GlobalHost.ConnectionManager.GetHubContext<VideoHub>();
             return hubContext.Clients;
+        }
+
+        protected virtual VideoViewModel[] GetVideoList()
+        {
+            var videoList = HttpContext.Cache["player.Videos"] as VideoViewModel[];
+            if (videoList != null)
+            {
+                return videoList;
+            }
+
+            var videoFile = HttpContext.Server.MapPath("~/App_Data/videos.txt");
+            var lines = System.IO.File.ReadAllLines(videoFile);
+            videoList = lines.Select(CreateVideoModel).Where(model => model != null).ToArray();
+            HttpContext.Cache["player.Videos"] = videoList;
+
+            return videoList;
+        }
+
+        protected virtual VideoViewModel CreateVideoModel(string videoLine)
+        {
+            if (string.IsNullOrWhiteSpace(videoLine))
+            {
+                return null;
+            }
+
+            var parts = videoLine.Split(new[] {','}, StringSplitOptions.RemoveEmptyEntries);
+            if (parts.Length < 2)
+            {
+                return null;
+            }
+
+            var video = new VideoViewModel
+            {
+                Title = parts[0].Trim(),
+                Url = parts[1].Trim()
+            };
+
+            return video;
         }
     }
 }
