@@ -1,6 +1,6 @@
 ﻿@model DevOpsConf2016.Models.ViewModels.HomeViewModel
 @{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "DevOpsConf 2016";
     var isAuthenticated = User != null && User.Identity.IsAuthenticated;
 }
 
@@ -31,26 +31,6 @@
     </script>
 }
 
-@*<div class="jumbotron row">
-        <div class="row">
-            <div class="col-md-7">
-                <h1>DevOpsConf 2016</h1>
-                <p class="lead">
-                    Calling all speakers! If you are a leader in the DevOps community or if you have a presentation you have a DevOps topic you would
-                    like to speak on then get in touch. Time is short and spots are limited so reach out now.
-                </p>
-            </div>
-
-            <div id="call-for-speakers" class="col-md-5"><img class="img-responsive" src="/Content/images/call-for-speakers.png" /></div>
-        </div>
-
-        <div class="row">
-            <br/>
-            @Html.ActionLink("Speakers Register Now", "Create", new {controller="Abstract"}, new { @class = "btn btn-primary btn-lg"})
-        </div>
-
-    </div>*@
-
 @if (isAuthenticated)
 {
     <br />
@@ -62,6 +42,7 @@
 }
 else
 {
+    <div id="anouncement">Live streaming begins on Thursday at 9 am CST. <a href="/Auth/Register">Register for free now &raquo;</a></div>
     <div class="spalsh">
         <img src="/Content/images/dev-ops-conf.jpg" />
     </div>
