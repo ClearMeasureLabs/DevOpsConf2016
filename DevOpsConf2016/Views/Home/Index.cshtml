@@ -31,15 +31,15 @@
     </script>
 }
 
-@if (isAuthenticated)
-{
+@*@if (isAuthenticated)
+{*@
     <br />
     <div id="player">
         <div class="embed-container">
             <iframe id="youtube" width="470" height="264" src="http://www.youtube.com/embed/@Model.VideoId" frameborder="0" allowfullscreen=""></iframe>
         </div>
     </div>
-}
+@*}
 else
 {
     <div id="anouncement">Live streaming begins on Thursday at 9 am CST. <a href="/Auth/Register">Register for free now &raquo;</a></div>
@@ -54,7 +54,6 @@ else
                 Discover the latest DevOps related solutions, technologies, and tools. Learn new skills and discover whats new through live technical presentations.
                 Explore critics tools like TeamCity, Octopus Deploy, and managing cloud environments like Azure.
             </p>
-            @*<p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>*@
         </div>
         <div class="col-md-4">
             <h2>Sessions</h2>
@@ -71,4 +70,4 @@ else
             </p>
         </div>
     </div>
-}
+}*@
