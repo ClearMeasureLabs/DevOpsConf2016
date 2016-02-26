@@ -31,8 +31,8 @@
     </script>
 }
 
-@*@if (isAuthenticated)
-{*@
+@if (isAuthenticated)
+{
     <br />
     <div id="player">
         <div class="embed-container">
@@ -41,10 +41,10 @@
         <h3>Great news! We will be giving away two TeamCity Build Agent licenses. The winners will be notified via email after the conference.</h3>
     </div>
     
-@*}
+}
 else
 {
-    <div id="anouncement">Live streaming begins on Thursday at 9 am CST. <a href="/Auth/Register">Register for free now &raquo;</a></div>
+    <div id="anouncement">The conference has ended but you can check out the recordings on YouTube. <a href="https://www.youtube.com/c/clearmeasure">Watch Recorded Sessions &raquo;</a></div>
     <div class="spalsh">
         <img src="/Content/images/dev-ops-conf.jpg" />
     </div>
@@ -72,4 +72,4 @@ else
             </p>
         </div>
     </div>
-}*@
+}

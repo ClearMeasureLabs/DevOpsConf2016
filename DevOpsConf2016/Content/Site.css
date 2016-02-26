@@ -136,10 +136,6 @@ footer {
         float: none;
         vertical-align: top;
     }
-    
-    .navbar-nav li:nth-last-child(2) {
-        margin-left: 80px;
-    }
 
     .navbar .navbar-collapse {
         text-align: center;
